@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w -- #  -*- Perl -*-
+#!/sw/perl/bin/perl -w -- #  -*- Perl -*-
 #
 #    xslns-build - generate a parallel set of DocBook5 namespaced 
 #                  stylesheet directories from a directory of

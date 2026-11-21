@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/sw/bash/bin/bash
 
 # USAGE:
 #   xslt [-xsltproc|-xalan|-saxon]  inputfile  xslfile  outputfile  [param1=value1 [param2=value2 ...]]

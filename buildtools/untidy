@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w -- # -*- Perl -*-
+#!/sw/perl/bin/perl -w -- # -*- Perl -*-
 
 my @filenames = ();
 my $opts = "";

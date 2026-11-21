@@ -1,4 +1,4 @@
-#!/usr/bin/perl -- # -*- Perl -*-
+#!/sw/perl/bin/perl -- # -*- Perl -*-
 
 # This script checks the param.ent and param.xweb files for consistency
 

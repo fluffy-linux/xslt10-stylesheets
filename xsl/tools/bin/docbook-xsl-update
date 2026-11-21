@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/sw/bash/bin/bash
 # vim: number
 
 # docbook-xsl-update - Update environment to latest docbook-xsl snapshot

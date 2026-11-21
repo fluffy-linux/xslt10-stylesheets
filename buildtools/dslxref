@@ -1,4 +1,4 @@
-#!/usr/bin/perl -- # -*- Perl -*-
+#!/sw/perl/bin/perl -- # -*- Perl -*-
 
 use Getopt::Std;
 use Cwd;

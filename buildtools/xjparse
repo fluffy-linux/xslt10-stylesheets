@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/sw/bash/bin/bash
 
 #
 # Usage: xjparse [opts] src.xml

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/sw/bash/bin/bash
 grep=egrep
 LOGFILENAME=$1
 # FIXME: This regexp may not catch all error messages emitted;

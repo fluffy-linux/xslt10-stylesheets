@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/sw/bash/bin/bash
 if [ "$1" = "uninstall" ]
 then
   if [ -f ./uninstall.sh ]

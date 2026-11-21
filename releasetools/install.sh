@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/sw/bash/bin/bash
 
 # install.sh - Set up user environment for a XML/XSLT distribution
 

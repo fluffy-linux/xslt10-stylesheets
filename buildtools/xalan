@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w -- #  -*- Perl -*-
+#!/sw/perl/bin/perl -w -- #  -*- Perl -*-
 #
 # This script runs the Xalan XSLT processor. It relies on a configuration
 # file to identify java versions, class paths, etc.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/sw/bash/bin/bash
 
 FORMAT=$1; shift
 DSSSL=$1; shift
