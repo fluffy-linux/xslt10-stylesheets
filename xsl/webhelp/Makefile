@@ -22,7 +22,7 @@ docs/index.html: docsrc/readme.xml
            $<
 	xsltproc xsl/webhelp.xsl xincluded-profiled.xml
 	rm xincluded-profiled.xml
-	java \
+	if command -v java >/dev/null; then java \
           -DhtmlDir=docs \
           -DindexerLanguage=en \
           -DhtmlExtension=html \
@@ -31,7 +31,8 @@ docs/index.html: docsrc/readme.xml
           -Dorg.xml.sax.driver=org.ccil.cowan.tagsoup.Parser \
           -Djavax.xml.parsers.SAXParserFactory=org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl \
           -classpath $(classpath) \
-          com.nexwave.nquindexer.IndexerMain
+          com.nexwave.nquindexer.IndexerMain; \
+	else echo "no java: docs/search has no index"; fi
 	cp -r template/search/* docs/search
 
 clean:
