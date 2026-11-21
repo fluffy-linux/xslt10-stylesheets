@@ -1,0 +1,51 @@
+#!/sw/bash/bin/bash
+#
+# xsltproc-plain [xsltproc-options] input style [output] [name=value ...]
+#
+# buildtools/xsltproc's calling convention, running xsltproc directly:
+# without its ~/.xmlc configuration file or the XML::XPath perl module,
+# which only the maintainers' machines have.  Each name=value becomes
+# --stringparam name value; output "-" or none means standard output.
+# Use it as the XSLT make variable: make XSLT=$PWD/buildtools/xsltproc-plain
+
+set -e
+
+args=("$@")
+params=()
+while (( ${#args[@]} )) && [[ ${args[-1]} == *=* ]]
+do
+    p=${args[-1]}
+    unset 'args[-1]'
+    params=(--stringparam "${p%%=*}" "${p#*=}" "${params[@]}")
+done
+
+pop() {
+    popped=
+    if (( ${#args[@]} ))
+    then
+        popped=${args[-1]}
+        unset 'args[-1]'
+    fi
+}
+pop; output=$popped
+pop; style=$popped
+pop; input=$popped
+if [[ -z $input || $input == -* ]]
+then
+    [[ -n $input ]] && args+=("$input")
+    input=$style
+    style=$output
+    output=
+fi
+
+if [[ -z $input || -z $style ]]
+then
+    echo "usage: $0 [xsltproc-options] input style [output] [name=value ...]" >&2
+    exit 2
+fi
+
+if [[ -n $output && $output != - ]]
+then
+    exec xsltproc "${args[@]}" "${params[@]}" "$style" "$input" > "$output"
+fi
+exec xsltproc "${args[@]}" "${params[@]}" "$style" "$input"
